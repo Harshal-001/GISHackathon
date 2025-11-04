@@ -3,7 +3,6 @@ import json
 import googlemaps
 import os
 from dotenv import load_dotenv
-from langchain.agents import create_agent
 
 load_dotenv()
 
@@ -125,15 +124,6 @@ def calculate_driving_distance( origin_lat, origin_lng, requestType = "police"):
             return None
     ans_output = json.dumps(ans, indent=4)
     return ans_output
-
-def call_agent():
-    agent = create_agent(
-        model="claude-sonnet-4-5-20250929",
-        tools=[calculate_driving_distance],
-        system_prompt="You are an optimizer. Your goal is to find the closest emergency service centre. You are to give "
-                      "one emergency service centre as the answer that is closest to the user along with how long it "
-                      "takes to get there",
-    )
 
 
 if __name__ == "__main__":
