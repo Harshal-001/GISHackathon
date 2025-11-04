@@ -11,11 +11,9 @@ def calculate_driving_distance( origin_lat, origin_lng, requestType = "police"):
     Calculates the driving distance between two points using Google Maps Distance Matrix API.
 
     Args:
-        api_key (str): Your Google Maps Platform API key.
         origin_lat (float): Latitude of the origin point.
         origin_lng (float): Longitude of the origin point.
-        destination_lat (float): Latitude of the destination point.
-        destination_lng (float): Longitude of the destination point.
+        requestType (string): The requested emergency service. One of [police, fire, hospital]
 
     Returns:
         dict: A dictionary containing distance and duration information,
